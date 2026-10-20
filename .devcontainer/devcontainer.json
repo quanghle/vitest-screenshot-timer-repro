@@ -1,0 +1,7 @@
+{
+  "name": "vitest-screenshot-timer-repro",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "hostRequirements": { "cpus": 2 },
+  "postCreateCommand": "npm ci && npx playwright install --with-deps chromium",
+  "postAttachCommand": "echo 'Run: npm run repro   (then: npm run repro:patched)'"
+}

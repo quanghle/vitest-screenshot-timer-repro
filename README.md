@@ -13,7 +13,16 @@ Tests closed successfully but something prevents Vite server from exiting
 
 The run then force-exits up to 10s late.
 
-## Run it
+## Run it in GitHub Codespaces
+
+Open the repository in a codespace (Code → Codespaces → Create). `.devcontainer/devcontainer.json` installs the dependencies and Playwright's Chromium with its Linux libraries, so once setup finishes you only run:
+
+```sh
+npm run repro
+npm run repro:patched
+```
+
+## Run it locally
 
 ```sh
 npm install
@@ -31,6 +40,8 @@ npm run repro:patched  # same test with asyncTimeout's timer unref'd
 | `timeout: 20_000` (bug) | 1.1–1.8s | 11.3–16.0s | yes |
 | `timeout: 4_000` (control) | ~1.1s | 5.4–7.1s | no, but it still waits for the 4s timer |
 | `timeout: 20_000`, timer unref'd (patched) | ~1s | 1.4–2.6s | no |
+
+On Linux (Node 22, the same image the codespace uses) one run gave 11.3s wall for the bug run, 5.0s for the control and 1.7s patched, with the same message.
 
 Ranges cover three runs on the same machine. `repro.cast` is a terminal recording of one of them (`node record.mjs` makes a new one, with this folder's absolute path shown as `~/vitest-screenshot-timer-repro`).
 
