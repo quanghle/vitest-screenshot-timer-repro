@@ -15,7 +15,9 @@ The run then force-exits up to 10s late.
 
 ## Run it in GitHub Codespaces
 
-Open the repository in a codespace (Code → Codespaces → Create). `.devcontainer/devcontainer.json` installs the dependencies and Playwright's Chromium with its Linux libraries, so once setup finishes you only run:
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/quanghle/vitest-screenshot-timer-repro)
+
+Open the repository in a codespace (the button above, or Code → Codespaces → Create). `.devcontainer/devcontainer.json` installs the dependencies and Playwright's Chromium with its Linux libraries, so once setup finishes you only run:
 
 ```sh
 npm run repro
